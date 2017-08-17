@@ -29,10 +29,6 @@ const options = {
 const middleware = axiosMiddleware(axios, options)
 
 describe('axiosMiddleware', () => {
-  const client = axios.create({
-    responseType: 'json'
-  })
-
   const mockAxiosClient = new MockAdapter(axios)
   const mockStore = configureMockStore([middleware])
   const mockAdapter = mockAxiosClient.adapter()
