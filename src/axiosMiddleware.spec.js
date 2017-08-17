@@ -1,4 +1,3 @@
-import React from 'react';
 import axios from 'axios'
 import axiosMiddleware from 'redux-axios-middleware'
 import configureMockStore from 'redux-mock-store'
