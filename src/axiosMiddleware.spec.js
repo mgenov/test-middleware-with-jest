@@ -46,7 +46,6 @@ describe('axiosMiddleware', () => {
   })
 
   it('attaches authorization header on each request', () => {
-    expect.assertions(1);
     let got
 
     mockAxiosClient.onGet('/test').reply(config => {
@@ -74,11 +73,9 @@ describe('axiosMiddleware', () => {
   
   
   it('attaches another authorization header on each request', () => {
-    expect.assertions(1);
-
     let got
 
-    mockAxiosClient.onGet('/test').reply(config => {
+    mockAxiosClient.onGet('/test2').reply(config => {
       got = config.headers['Authorization']
       return [200]
     })
@@ -88,7 +85,7 @@ describe('axiosMiddleware', () => {
         type: 'ANOTHER_LOAD_ACTION',
         payload: {
           request: {
-            url: '/test'
+            url: '/test2'
           }
         }
       }
