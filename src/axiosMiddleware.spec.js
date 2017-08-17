@@ -74,7 +74,7 @@ describe('axiosMiddleware', () => {
   })
   
   
-  it('attaches authorization header on each request', () => {
+  it('attaches another authorization header on each request', () => {
     expect.assertions(1);
 
     let got
